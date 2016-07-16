@@ -2,7 +2,8 @@ var express = require('express');
 var app = express();
 
 app.get('/:DATE', function (req, res) {
-  res.send(req.params.DATE);
+  var date = req.params.DATE.split('%20')
+  res.send(date);
 });
 
 app.listen(8080, function () {
